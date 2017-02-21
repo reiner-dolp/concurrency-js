@@ -1,0 +1,19 @@
+{
+	"name": "concurrency-js",
+	"description": "easier message passing between webworker threads",
+	"keywords": [
+		"threading", "message passing", "webworker", "thread",
+		"worker pool", "concurrency"
+	],
+
+	"version": "0.0.0",
+
+	"homepage": "https://github.com/reiner-dolp/concurrency-js",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/reiner-dolp/concurrency-js.git"
+	},
+	"main": "./all.js",
+	"types": "./all.d.ts",
+	"license": "MIT"
+}
