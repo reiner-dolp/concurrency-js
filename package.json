@@ -13,6 +13,11 @@
 		"type": "git",
 		"url": "git://github.com/reiner-dolp/concurrency-js.git"
 	},
+
+	"dependencies": {
+		"assert-js": "git+https://git@github.com/reiner-dolp/assert-js.git"
+	},
+
 	"main": "./all.js",
 	"types": "./all.d.ts",
 	"license": "MIT"

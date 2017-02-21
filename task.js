@@ -1,7 +1,4 @@
 /*globals
-	WorkerPool,
-	LateStaticBinding,
-	AsyncResult,
 	shorten_string
 */
 (function(ns, global, undefined) { "use strict";
