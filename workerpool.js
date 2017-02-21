@@ -27,7 +27,7 @@
 
 ns.WorkerPool = WorkerPool;
 
-ns.WorkerPool.WORKER_SCRIPT = "workerpool-worker.js";
+ns.WorkerPool.WORKER_SCRIPT = "node_modules/concurrency-js/workerpool-worker.js";
 ns.WorkerPool.MARK_UNPACKER = "_cast_to_original_datatype";
 
 var MSG_WORKERPOOL_STALLED = 'Workerpool stalled. Cannot dispatch waiting tasks because they have neutered arguments.';
