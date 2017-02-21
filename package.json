@@ -18,6 +18,10 @@
 		"assert-js": "git+https://git@github.com/reiner-dolp/assert-js.git"
 	},
 
+	"scripts": {
+		"postinstall": "npm install assert-js"
+	},
+
 	"main": "./all.js",
 	"types": "./all.d.ts",
 	"license": "MIT"
