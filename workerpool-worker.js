@@ -8,6 +8,8 @@ importScripts("task.js");
 importScripts("workerpool.js");
 importScripts("packer/defeeredresultvariable.js");
 
+var SCRIPT_ROOT = null;
+
 (function(ns) { "use strict";
 
 ASSERT(WorkerPool, "worker pool datatype cannot be found");
@@ -31,13 +33,16 @@ self.addEventListener('message', function(e) {
 
 		MARK_UNPACKER = e.data.mark_unpacker;
 		LOADED_SCRIPTS = e.data.load_scripts;
+		SCRIPT_ROOT = e.data.worker_script_root;
 		INDEX = e.data.worker_index;
 
 		if(e.data.lookup_table !== undefined && e.data.lookup_table !== null) {
 			Task.DEFAULT_LOOKUP_TABLE = e.data.lookup_table;
 		}
 
-		importScripts.apply(ns, LOADED_SCRIPTS);
+		for(var i = 0; i < LOADED_SCRIPTS.length; ++i) {
+			importScripts(SCRIPT_ROOT + "/" + LOADED_SCRIPTS[i]);
+		}
 
 	// All other calls should be tasks to run
 	} else {

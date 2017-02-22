@@ -28,6 +28,7 @@
 ns.WorkerPool = WorkerPool;
 
 ns.WorkerPool.WORKER_SCRIPT = "node_modules/concurrency-js/workerpool-worker.js";
+ns.WorkerPool.WORKER_SCRIPT_ROOT = "../../../";
 ns.WorkerPool.MARK_UNPACKER = "_cast_to_original_datatype";
 
 var MSG_WORKERPOOL_STALLED = 'Workerpool stalled. Cannot dispatch waiting tasks because they have neutered arguments.';
@@ -174,6 +175,7 @@ function WorkerPool(worker_scripts, worker_count, lookup_table) {
 		this.workers[i].postMessage({
 			worker_index: i,
 			mark_unpacker: WorkerPool.MARK_UNPACKER,
+			worker_script_root: WorkerPool.WORKER_SCRIPT_ROOT,
 			load_scripts: worker_scripts,
 			lookup_table: lookup_table
 		});
